@@ -13,38 +13,23 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      screen:{
+        sm: "400px"
+      },
       colors: {
-        'main': {
-          '50': '#f8f8f8',
-          '100': '#f0efef',
-          '200': '#e5e3e3',
-          '300': '#d2cfcf',
-          '400': '#b7b2b2',
-          '500': '#9c9797',
-          '600': '#847e7e',
-          '700': '#6d6868',
-          '800': '#5c5858',
-          '900': '#504c4c',
-          '950': '#292626',
-        },
-        'secondary': {
-          '50': '#eff4ff',
-          '100': '#dbe6fe',
-          '200': '#bed4ff',
-          '300': '#92bafe',
-          '400': '#6d9efc',
-          '500': '#396ef8',
-          '600': '#234ded',
-          '700': '#1b39da',
-          '800': '#1c2fb1',
-          '900': '#1d2d8b',
-          '950': '#161e55',
-        },
-        screen:{
-          sm: "400px"
-        } 
-
-
+        // 'txt': '#030302',
+        'txtdrk': '#FDFDFC',
+        'pri': '#445F74',
+        'pridrk': '#8BA6BB',
+        'sec': '#DFE0EC',
+        'secdrk': '#131420',
+        'acc': '#1BC023',
+        'accdrk': '#81EE87',
+        'txt': 'hsl(var(--text) / <alpha-value>)',
+        'background': 'hsl(var(--background) / <alpha-value>)',
+        'primary': 'hsl(var(--primary) / <alpha-value>)',
+        'secondary': 'hsl(var(--secondary) / <alpha-value>)',
+        'accent': 'hsl(var(--accent) / <alpha-value>)',
       },
       fontFamily: {
         lato: ['Lato', 'sans-serif'],
