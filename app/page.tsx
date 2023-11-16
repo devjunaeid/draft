@@ -1,11 +1,16 @@
-import ThemeSwitch from "./components/ThemeSwitch";
-
+import Featured from './components/Featured/Featured';
+import Hero from './components/Hero/Hero';
+import Post from './components/Posts/Post';
+import st from './home.module.css';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 dark:bg-black">
-    <h1 className="text-gray-800 dark:text-white">Hello World!</h1>
-    <ThemeSwitch/>
+    <main className={st.container}>
+      <Hero/>
+      <Featured/>
+      <div>
+        <Post/>
+      </div>
   </main>
   )
 }

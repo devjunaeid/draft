@@ -1,8 +1,8 @@
 "use client";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import sunIcon from "../../public/sun.svg";
-import moonIcon from "../../public/moon.svg";
+import sunIcon from "../../../public/sun.svg";
+import moonIcon from "../../../public/moon.svg";
 import { useState, useEffect } from "react";
 
 const ThemeSwitch = () => {
@@ -34,7 +34,7 @@ const ThemeSwitch = () => {
       <Image
         onClick={handleClick}
         src={tog ? sunIcon : moonIcon}
-        className="w-12 h-12"
+        className="w-8 h-8"
         alt="Theme Switcher"
         priority={true}
       />

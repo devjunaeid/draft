@@ -1,0 +1,7 @@
+.container{
+    @apply text-4xl w-full h-10;
+}
+
+.logo{
+    @apply text-xl uppercase md:text-5xl text-secondary-700 font-black dark:bg-white;
+}
