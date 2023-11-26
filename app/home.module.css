@@ -1,7 +1,0 @@
-.container{
-    @apply min-h-screen flex flex-col items-center justify-center text-center;
-}
-
-.mainHeading{
-    @apply font-spectral text-main-950 text-6xl font-black;
-}
