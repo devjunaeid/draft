@@ -11,6 +11,7 @@
     --primary: 206deg 33% 25%;
     --secondary: 205deg 33% 90%;
     --accent: 206deg 33% 50%;
+    --tech: 30deg, 89%, 69%;
   }
   .dark {
     --text: 208deg 32% 92%;
@@ -30,5 +31,13 @@ a{
 }
 
 body{
-    @apply max-w-[1536px] px-10 mx-auto flex flex-col items-center bg-background;
+    @apply max-w-[1536px] px-2 md:px-10 mx-auto bg-background;
+}
+
+.frm{
+  @apply flex justify-center items-center;
+}
+
+.fcm{
+  @apply flex flex-col justify-center items-center;
 }
