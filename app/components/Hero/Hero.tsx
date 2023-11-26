@@ -12,16 +12,16 @@ function Hero() {
   return (
     <div className="flex flex-col my-10 w-full h-fit">
       <div className="flex">
-        <h1 className="text-left text-8xl text-txt font-raleway font-black mb-16">
-          Write Free,
-          <br /> Share with the world.
+        <h1 className="text-center md:text-left text-6xl md:text-8xl text-txt font-raleway font-black mb-16">
+          Writing Free,
+          <br /> Sharing with the world.
         </h1>
       </div>
-      <div className="flex w-full gap-10">
+      <div className="fcm md:flex-row w-full gap-10">
         <div className="relative w-full max-h-[450px]">
           <Image
             src={hero1}
-            className="w-full h-full rounded-lg object-cover"
+            className="w-full h-[450px] rounded-lg object-cover"
             alt=""
           />
           <div className="absolute inset-0 w-full h-full flex flex-col justify-end items-start px-10 bg-black/60 rounded-lg">
@@ -43,10 +43,10 @@ function Hero() {
         <div className="flex flex-col w-full h-full justify-center items-center">
           <h1 className="text-center text-2xl font-thin italic font-poppins mb-4 text-txt"><span className="p-2 underline underline-offset-2 hover:bg-blue-700">#writing</span>about</h1>
           <div className="w-full grid grid-rows-3 grid-flow-col gap-y-8 gap-x-5">
-            <div className="text-2xl py-2 md:py-4 rounded-md row-span-2 fcm text-txt font-bold uppercase bg-accent/30"><GrTechnology size="2.8rem" /> Tech</div>
-            <div className="text-2xl py-2 md:py-4 rounded-md fcm text-txt font-bold uppercase bg-accent/30"><RiRobot2Fill size="2.8rem" />AI</div>
-            <div className="text-2xl py-2 md:py-4 rounded-md fcm text-txt font-bold uppercase bg-accent/30"><MdCardTravel size="2.8rem" />Travel</div>
-            <div className="text-2xl py-2 md:py-4 rounded-md row-span-2 fcm text-txt text-center font-bold uppercase bg-accent/30"><IoCloud size="2.8rem" />Cloud <br />Computing</div>
+            <div className="text-lg md:text-2xl py-2 md:py-4 rounded-md row-span-2 fcm text-txt font-bold uppercase bg-accent/30"><GrTechnology size="2.2rem" /> Tech</div>
+            <div className="text-lg md:text-2xl py-2 md:py-4 rounded-md fcm text-txt font-bold uppercase bg-accent/30"><RiRobot2Fill size="2.8rem" />AI</div>
+            <div className="text-lg md:text-2xl py-2 md:py-4 rounded-md fcm text-txt font-bold uppercase bg-accent/30"><MdCardTravel size="2.8rem" />Travel</div>
+            <div className="text-lg md:text-2xl py-2 md:py-4 rounded-md row-span-2 fcm text-txt text-center font-bold uppercase bg-accent/30"><IoCloud size="2.8rem" />Cloud <br />Computing</div>
           </div>
         </div>
       </div>
