@@ -6,13 +6,27 @@ import moonIcon from "../../../public/moon.svg";
 import { useState, useEffect } from "react";
 
 const ThemeSwitch = () => {
+
+  const getLocalTheme = () =>{
+    if(typeof window !== undefined){
+      const theme = localStorage.getItem("theme");
+      console.log(theme)
+      return theme || "light"
+    }
+  }
   const [tog, setTog] = useState<boolean>();
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setTog(false);
-    setTheme("light");
+    const value = getLocalTheme()
+    if(value == "light"){
+      setTog(false);
+      setTheme("light");
+    }else{
+      setTog(true);
+      setTheme("dark");
+    }
   }, []);
 
   const handleClick = () => {
