@@ -7,14 +7,24 @@ import { MdKey } from "react-icons/md";
 import loginCover from "@/public/login/login.jpg";
 import Image from "next/image";
 import { useState } from "react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 function Login() {
   const [tog, settog] = useState(true);
-
+  const {data, status} = useSession();
   const handleClick = () => {
     settog(!tog);
   };
+  const router = useRouter();
 
+  if(status == "loading"){
+    return <div className="text-4xl font-montserrat">Loading....</div>
+  }
+
+  if(status == "authenticated"){
+    return router.push("/");
+  }
   return (
     <div className="min-h-fit frm w-full py-8 rounded-lg md:py-0 md:w-2/3 mx-auto my-8 bg-secondary md:rounded-md">
       <div className="hidden md:relative md:flex md:w-1/2 h-fit ">
@@ -115,9 +125,9 @@ function Login() {
             {tog ? "or, log in with" : "or, sign up with"}
           </h3>
           <div className="frm gap-4">
-            <FaGoogle size="1.5rem" />
+            <div onClick={()=>signIn("google")}><FaGoogle size="1.5rem" /></div>
             <FaSquareFacebook size="1.5rem" />
-            <FaSquareGithub size="1.5rem" />
+            <FaSquareGithub size="1.5rem" onClick={()=>signIn("github")} />
           </div>
           <p>
             or
