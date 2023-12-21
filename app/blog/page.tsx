@@ -27,7 +27,7 @@ function page({
         <CardList pageNumber={currentPage} cat={cat}/>
       </div>
       <div className='hidden justify-center items-start md:flex md:w-1/3'>
-        <Cardsm author='Junaeid' img={img} title='Hello 123' url='/' tag='tech'/>
+        <Cardsm author='Junaeid' img={img.src} title='Hello 123' url='/' tag='tech'/>
       </div>
     </div>
   )
