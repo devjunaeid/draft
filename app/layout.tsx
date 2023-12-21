@@ -1,9 +1,9 @@
-import './globals.css'
+import "./globals.css";
 import type { Metadata } from "next";
-import Provider from "./components/Theme/Provider";
+import Provider from "./providers/Provider";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-
+import AuthProviders from "./providers/AuthProviders";
 
 export const metadata: Metadata = {
   title: "Junaeid's Draft",
@@ -18,11 +18,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Provider>
-          <Navbar/>
-          <main>{children}</main>
-          <Footer/>
-        </Provider>
+        <AuthProviders>
+          <Provider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </Provider>
+        </AuthProviders>
       </body>
     </html>
   );
