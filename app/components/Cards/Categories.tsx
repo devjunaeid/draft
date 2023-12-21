@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 let bgs:{[key:string]:any} = {
@@ -9,9 +10,9 @@ let bgs:{[key:string]:any} = {
 
 function Categories(props:{name:string, size:string}) {
   return (
-    <div className={`fcm rounded-md px-4 py-2 w-36 h-16 ${bgs[props.name] || "bg-lime-400"} ${bgs[props.size]}`}>
+    <Link href={`/blog?cat=${props.name}`} className={`fcm rounded-md w-fit px-4 py-2 h-16 ${bgs[props.name] || "bg-pri"} ${bgs[props.size]}`}>
         <span className='text-2xl text-txt'>#{props.name}</span>
-    </div>
+    </Link>
   )
 }
 

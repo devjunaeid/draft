@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import ThemeSwitch from "../Theme/ThemeSwitch";
+import ThemeSwitch from "../Buttons/ThemeSwitch";
 import { RiMenu5Fill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
+import { TbPencilPlus } from "react-icons/tb";
 import Link from "next/link";
 import Auth from "../Auth/Auth";
+import { signOut, useSession } from "next-auth/react";
 
 const links = [
   {
@@ -27,6 +29,7 @@ const links = [
 
 function Navbar() {
   const [hamtog, sethamtog] = useState(false);
+  const {data, status} = useSession();
   const handleClick = () => {
     sethamtog(!hamtog);
   };
@@ -45,10 +48,11 @@ function Navbar() {
           </Link>
         ))}
       </div>
-      <div className="flex-1 flex items-center justify-end gap-4">
+      <div className="hidden flex-1 md:flex items-center justify-end gap-4">
         <ThemeSwitch />
-        <Auth />
+        <Auth status={status}/>
       </div>
+      <Link href={(status == "authenticated") ? "/write" : "/login"} className="mx-4 md:hidden"><TbPencilPlus size="1.5em" /></Link>
       <div className="md:hidden z-10" onClick={handleClick}>
         <div className="z-50">
           {hamtog ? <IoMdClose size="1.6rem" /> : <RiMenu5Fill size="1.6rem" />}
@@ -59,6 +63,11 @@ function Navbar() {
               {item.title}
             </Link>
           ))}
+          <div className="text-lg font-bold uppercase">
+          {
+            (status== "unauthenticated") ? <Link href={"/login"} className="text-lg font-bold uppercase">Sign up/ Log in</Link> : <span onClick={() => signOut()} className="text-lg font-bold uppercase">Log out</span>
+          }
+          </div>
           <div onClick={handleClick}>
           <IoMdClose size="1.6rem"/>
           </div>

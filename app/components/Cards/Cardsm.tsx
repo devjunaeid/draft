@@ -6,7 +6,7 @@ import Link from "next/link";
 interface smcard {
   title: string;
   author: string;
-  img: string;
+  img?: string;
   url: string;
   tag: string;
 }
@@ -15,7 +15,7 @@ function Cardsm(props: smcard) {
   return (
     <div className="flex justify-start items-center h-fit w-full rounded-md gap-6 my-4 dark:bg-white/10 bg-black/10 p-4">
       <div className="flex-none">
-        <Image src={hero1} className="h-24 w-24 rounded-full object-cover" />
+        <Image alt="Img" src={hero1} className="h-24 w-24 rounded-full object-cover" />
       </div>
       <div className="flex flex-col justify-start gap-2">
         <div className="px-1 py-[0.12rem] text-base bg-accent/20 rounded-sm w-fit lowercase">
