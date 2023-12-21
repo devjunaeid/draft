@@ -15,6 +15,7 @@ function page({
   searchParams: {
     query: string;
     page: string;
+    cat: string;
   };
 }) {
 
