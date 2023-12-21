@@ -35,7 +35,7 @@ export const GET = async (req: NextRequest) => {
 };
 
 // Create a post
-export const POST = async (req:NextApiRequest) => {
+export const POST = async (req:NextRequest) => {
   const session = await getAuthSession();
   if(!session){
     return new NextResponse(
