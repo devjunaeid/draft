@@ -1,7 +1,7 @@
 import EditorWrapper from "../components/Editor/Editor";
 
 const getdata = async () => {
-  const res = await fetch("/api/categories", {
+  const res = await fetch(`http://localhost:3000/api/categories`, {
     cache: "no-cache",
   });
   if (!res.ok) {

@@ -15,7 +15,6 @@ import { Editor as TinyMCEEditor } from "tinymce";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { app } from "@/utils/firebase";
-import { JsonArray } from "next-auth/adapters";
 
 interface catt {
   title: string;
