@@ -4,7 +4,7 @@ import Image from "next/image";
 import img from "@/public/home/hero1.png";
 import Cardsm from "../../components/Cards/Cardsm";
 
-const getdata = async (post) => {
+const getdata = async (post: string) => {
   const res = await fetch(
     `http://localhost:3000/api/posts/${post}`,
     {
@@ -17,7 +17,7 @@ const getdata = async (post) => {
   return res.json();
 };
 
-async function page({params}) {
+async function page({params} : {params: {post:string}}) {
 
   const {post} = params;
   const data = await getdata(post);
@@ -61,7 +61,7 @@ async function page({params}) {
           <h1 className="my-8 text-4xl font-bold">Releted Post</h1>
           <Cardsm
             author="Juaneid"
-            img={img}
+            img={img.src}
             tag="tech"
             title="Hello world here I come"
             url="/world"

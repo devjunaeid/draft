@@ -28,7 +28,7 @@ export default function Home({
 
       <Featured
         title={ft.title}
-        img={ft.img}
+        img={ft.img.src}
         dsc={ft.dsc}
         alt={ft.alt}
         url={ft.url}
