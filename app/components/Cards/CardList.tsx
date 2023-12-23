@@ -5,6 +5,7 @@ import { JsonArray, JsonObject } from "next-auth/adapters";
 import Pagination from "../Pagination/Pagination";
 import { stringify } from "querystring";
 import Card from "./Card";
+import { headers } from "next/headers";
 
 const ft = {
   title: '"Cloud" The next generation of Computing',
@@ -15,7 +16,8 @@ const ft = {
 };
 
 const getdata = async (pageNumber: number, cat: string) => {
-  const res = await fetch(`https://draft-9vokpg4lj-devjunaeids-projects.vercel.app/api/posts?page=${pageNumber}&cat=${cat || ""}`, {
+  const host = headers().get("host");
+  const res = await fetch(`https://${host}/api/posts?page=${pageNumber}&cat=${cat || ""}`, {
     cache: "no-cache",
   });
   if (!res.ok) {

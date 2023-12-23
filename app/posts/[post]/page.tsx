@@ -3,9 +3,10 @@ import Categories from "../../components/Cards/Categories";
 import Image from "next/image";
 import img from "@/public/home/hero1.png";
 import Cardsm from "../../components/Cards/Cardsm";
+import { headers } from "next/headers";
 
-const getdata = async (post: string) => {
-  const res = await fetch(`https://draft-9vokpg4lj-devjunaeids-projects.vercel.app/api/posts/${post}`, {
+const getdata = async (post: string, host:string) => {
+  const res = await fetch(`https://${host}/api/posts/${post}`, {
     cache: "no-cache",
   });
   if (!res.ok) {
@@ -16,7 +17,8 @@ const getdata = async (post: string) => {
 
 async function page({ params }: { params: { post: string } }) {
   const { post } = params;
-  const data = await getdata(post);
+  const host = headers().get("host");
+  const data = await getdata(post, host!);
 
   return (
     <div className="fcm w-full gap-8">

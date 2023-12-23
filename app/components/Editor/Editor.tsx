@@ -5,6 +5,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
+import { headers } from "next/headers";
 import { useState, useRef, useEffect, ChangeEvent, ReactElement } from "react";
 import { FiPlusCircle } from "react-icons/fi";
 import { MdOutlineAddAPhoto } from "react-icons/md";
@@ -106,7 +107,8 @@ function EditorWrapper(props: cat): ReactElement {
 
   //Handleing submit
   const handleSubmit = async () => {
-    const res = await fetch("https://draft-9vokpg4lj-devjunaeids-projects.vercel.app/api/posts", {
+    const host = headers().get("host");
+    const res = await fetch(`https://${host}/api/posts`, {
       method: "POST",
       body: JSON.stringify({
         title,
