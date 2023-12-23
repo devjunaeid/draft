@@ -37,9 +37,9 @@ function Navbar() {
   return (
     <div className="sticky top-0 z-50 flex flex-nowrap w-full items-center px-5 md:px-10 py-5 my-2 md:my-5 h-20 rounded-lg bg-secondary">
       <div className="flex-1">
-        <h1 className="text-2xl md:text-6xl uppercase text-txt font-black tracking-tighter font-poppins">
+        <Link href={"/"} className="text-2xl md:text-6xl uppercase text-txt font-black tracking-tighter font-poppins">
           Draft
-        </h1>
+        </Link>
       </div>
       <div className="hidden flex-1 justify-center gap-5 text-txt text-2xl font-raleway uppercase md:flex">
         {links.map((item, key) => (
