@@ -83,7 +83,8 @@ function EditorWrapper(props: cat): ReactElement {
     router.push("/login");
     return (
       <div>
-        You are not Authenticated <br /> <h1 className="text-red-500 font-2xl">Rdireacting...</h1>
+        You are not Authenticated <br />{" "}
+        <h1 className="text-red-500 font-2xl">Rdireacting...</h1>
       </div>
     );
   }
@@ -105,7 +106,7 @@ function EditorWrapper(props: cat): ReactElement {
 
   //Handleing submit
   const handleSubmit = async () => {
-    const res = await fetch("/api/posts", {
+    const res = await fetch("https://draft-9vokpg4lj-devjunaeids-projects.vercel.app/api/posts", {
       method: "POST",
       body: JSON.stringify({
         title,

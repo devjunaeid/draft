@@ -15,26 +15,28 @@ const ft = {
 };
 
 const getdata = async (pageNumber: number, cat: string) => {
-  const res = await fetch(
-    `/api/posts?page=${pageNumber}&cat=${cat || ""}`,
-    {
-      cache: "no-cache",
-    }
-  );
+  const res = await fetch(`https://draft-9vokpg4lj-devjunaeids-projects.vercel.app/api/posts?page=${pageNumber}&cat=${cat || ""}`, {
+    cache: "no-cache",
+  });
   if (!res.ok) {
     throw new Error();
   }
   return res.json();
 };
 
-async function CardList({ pageNumber, cat }: { pageNumber: string, cat: string }) {
+async function CardList({
+  pageNumber,
+  cat,
+}: {
+  pageNumber: string;
+  cat: string;
+}) {
   const page = parseInt(pageNumber);
   const { post, count } = await getdata(page, cat);
   const POST_PER_PAGE = 2;
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
 
-  
   return (
     <div className="grid grid-cols-1 grid-flow-row gap-4 my-8 w-full">
       <div>
