@@ -17,7 +17,8 @@ const ft = {
 
 const getdata = async (pageNumber: number, cat: string) => {
   const host = headers().get("host");
-  const res = await fetch(`https://${host}/api/posts?page=${pageNumber}&cat=${cat || ""}`, {
+  const protocal = process?.env.NODE_ENV==="development"?"http":"https"
+  const res = await fetch(`${protocal}://${host}/api/posts?page=${pageNumber}&cat=${cat || ""}`, {
     cache: "no-cache",
   });
   if (!res.ok) {

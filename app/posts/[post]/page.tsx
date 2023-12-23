@@ -5,8 +5,10 @@ import img from "@/public/home/hero1.png";
 import Cardsm from "../../components/Cards/Cardsm";
 import { headers } from "next/headers";
 
-const getdata = async (post: string, host:string) => {
-  const res = await fetch(`https://${host}/api/posts/${post}`, {
+const getdata = async (post: string) => {
+  const host = headers().get("host");
+  const protocal = process?.env.NODE_ENV==="development"?"http":"https"
+  const res = await fetch(`${protocal}://${host}/api/posts/${post}`, {
     cache: "no-cache",
   });
   if (!res.ok) {
@@ -17,8 +19,7 @@ const getdata = async (post: string, host:string) => {
 
 async function page({ params }: { params: { post: string } }) {
   const { post } = params;
-  const host = headers().get("host");
-  const data = await getdata(post, host!);
+  const data = await getdata(post);
 
   return (
     <div className="fcm w-full gap-8">
