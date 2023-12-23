@@ -4,6 +4,7 @@ import Provider from "./providers/Provider";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import AuthProviders from "./providers/AuthProviders";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Junaeid's Draft",
@@ -25,6 +26,7 @@ export default function RootLayout({
             <Footer />
           </Provider>
         </AuthProviders>
+        <SpeedInsights />
       </body>
     </html>
   );
