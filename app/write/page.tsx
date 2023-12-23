@@ -1,22 +1,23 @@
 import EditorWrapper from "../components/Editor/Editor";
-
-const getdata = async () => {
-  const res = await fetch(`http://127.0.0.1:3000/api/categories`, {
-    cache: "no-cache",
-  });
-  if (!res.ok) {
-    throw new Error();
-  }
-  return res.json();
-};
+import prisma from "@/utils/db";
 
 
 async function Write() {
+  async function getdata() {
+    "use server";
+    try {
+      const cat = await prisma?.category.findMany();
+      return cat
+    } catch (error) {
+      console.log(error);
+      Response.json(error);
+    }
+  }
   const cat = await getdata();
 
   return (
     <div className="min-h-screen">
-      <EditorWrapper cat={cat}/>
+      <EditorWrapper cat={cat!} />
     </div>
   );
 }
