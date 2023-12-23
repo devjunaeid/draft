@@ -38,7 +38,7 @@ async function CardList({ pageNumber, cat }: { pageNumber: string, cat: string }
   return (
     <div className="grid grid-cols-1 grid-flow-row gap-4 my-8 w-full">
       <div>
-        {post?.map((item: any) => (
+        {post?.map((item: any, index: number) => (
           <Card
             title={item.title}
             cover={item.img}
@@ -48,7 +48,7 @@ async function CardList({ pageNumber, cat }: { pageNumber: string, cat: string }
             profilePic={item.user.image}
             tag={item.catSlag}
             url={item.slug}
-            key={item._id}
+            key={index}
           />
         ))}
       </div>
