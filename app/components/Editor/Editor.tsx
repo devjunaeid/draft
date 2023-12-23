@@ -105,7 +105,7 @@ function EditorWrapper(props: cat): ReactElement {
 
   //Handleing submit
   const handleSubmit = async () => {
-    const res = await fetch("http://127.0.0.1:3000/api/posts", {
+    const res = await fetch("/api/posts", {
       method: "POST",
       body: JSON.stringify({
         title,

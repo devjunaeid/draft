@@ -6,7 +6,7 @@ import Cardsm from "../../components/Cards/Cardsm";
 
 const getdata = async (post: string) => {
   const res = await fetch(
-    `http://127.0.0.1:3000/api/posts/${post}`,
+    `/api/posts/${post}`,
     {
       cache: "no-cache",
     }

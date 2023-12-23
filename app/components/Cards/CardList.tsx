@@ -16,7 +16,7 @@ const ft = {
 
 const getdata = async (pageNumber: number, cat: string) => {
   const res = await fetch(
-    `http://127.0.0.1:3000/api/posts?page=${pageNumber}&cat=${cat || ""}`,
+    `/api/posts?page=${pageNumber}&cat=${cat || ""}`,
     {
       cache: "no-cache",
     }
